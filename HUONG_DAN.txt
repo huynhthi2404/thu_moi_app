@@ -1,0 +1,22 @@
+CÔNG CỤ TẠO THƯ MỜI HÀNG LOẠT
+=============================
+CÁCH DÙNG
+1. Giải nén cả thư mục, bấm đúp file index.html (Chrome hoặc Edge). Không cần internet, không cần cài đặt.
+2. Sửa nội dung ở cột trái: đơn vị gửi, logo, sự kiện, thời gian, địa điểm, người ký.
+3. Dán danh sách người được mời vào ô số 6 (mỗi dòng 1 người, dán từ Excel được).
+   Riêng từng người: Tên | Thời gian | Địa điểm
+4. Xem trước bằng nút ‹ › phía trên thư mời. Nếu có dòng lỗi, app báo màu đỏ và chặn xuất.
+5. Bấm "Xuất tất cả (.zip)". Tên file: 001_Ten_nguoi_moi.png, trong file ThuMoi_<sự kiện>_<ngày>_<số thư>.zip.
+
+QUY ĐỊNH (đã cố định trong app)
+- Logo: tối đa 5; PNG/WebP/SVG nền TRONG SUỐT; cạnh ngắn >= 150px; <= 3 MB; tự co đều cho vừa hàng, nếu quá nhỏ (<70px) thì từ chối.
+- Chữ ký: PNG/WebP nền trong suốt, rộng >= 300px, <= 3 MB; xuất màu trắng hoặc giữ màu gốc.
+- Số ký tự tối đa hiển thị bên cạnh mỗi ô. Chữ dài sẽ tự thu nhỏ, nhỏ quá 70% thì báo lỗi, không bao giờ vỡ bố cục.
+- Tên người mời: tối đa 36 ký tự, tự in hoa. Mỗi lần xuất tối đa 500 thư.
+- Xuất PNG: 50 thư/file zip; JPG: 150 thư/file zip (trình duyệt có thể hỏi cho phép tải nhiều file).
+- Nội dung đã nhập được nhớ lại trên máy cho lần mở sau. Nút "Khôi phục" đưa về mặc định.
+
+KHÔNG SỬA (cố định): nền, chữ THƯ MỜI, "Trân trọng kính mời", "Đến tham dự", nhãn "Thời gian:", "Địa điểm:".
+
+FILE TRONG THƯ MỤC
+index.html, style.css, app.js (quy định ở đầu file app.js, mục CFG, T, FIELDS), assets.js (nền, font, logo mặc định), jszip.min.js (nén zip).

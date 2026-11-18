@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tạo thư mời hàng loạt</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<aside id="panel">
+  <h1>Tạo thư mời hàng loạt</h1>
+  <div id="status"></div>
+  <details open><summary>1. Đơn vị gửi</summary><div id="g-unit"></div></details>
+  <details open><summary>2. Logo đầu thư</summary>
+    <div id="logos"></div>
+    <label class="btn">+ Thêm logo<input id="logoIn" type="file" accept="image/png,image/webp,image/svg+xml" multiple hidden></label>
+    <p class="hint">PNG / WebP / SVG <b>nền trong suốt</b>, cạnh ngắn ≥ 150px, ≤ 3 MB, tối đa 5 logo (hết chỗ sẽ báo). Không nhận JPG.</p></details>
+  <details open><summary>3. Nội dung sự kiện (mục “Đến tham dự”)</summary><div id="g-event"></div></details>
+  <details open><summary>4. Thời gian và địa điểm</summary><div id="g-when"></div></details>
+  <details open><summary>5. Người ký</summary><div id="g-sign"></div>
+    <div class="row"><label class="btn">Đổi chữ ký<input id="sigIn" type="file" accept="image/png,image/webp" hidden></label>
+      <button id="sigDel" class="btn">Xóa chữ ký</button>
+      <select id="sigMode"><option value="white">Chữ ký màu trắng</option><option value="orig">Giữ màu gốc</option></select></div>
+    <p class="hint">Ảnh chữ ký: PNG / WebP nền trong suốt, rộng ≥ 300px, ≤ 3 MB.</p></details>
+  <details open><summary>6. Danh sách người được mời</summary>
+    <p class="hint">Mỗi dòng một thư mời. Dán thẳng từ Excel (cột A: tên). Muốn riêng từng người: <code>Tên | Thời gian | Địa điểm</code> (hai cột sau có thể bỏ trống).</p>
+    <textarea id="list" rows="8" placeholder="Bí thư Phan Anh Tuấn&#10;Trưởng khoa Nguyễn Văn A | 19g00 ngày 30/11/2026&#10;Cô Trần Thị B"></textarea>
+    <div id="count"></div></details>
+  <details open><summary>7. Xuất file</summary>
+    <div class="row"><select id="fmt"><option value="png">PNG (đẹp nhất, nặng)</option><option value="jpeg">JPG (nhẹ, dùng để gửi)</option></select>
+    <button id="go" class="btn pri">Xuất tất cả (.zip)</button><button id="stop" class="btn" hidden>Dừng</button></div>
+    <progress id="bar" value="0" max="1" hidden></progress><div id="exp"></div></details>
+  <button id="reset" class="btn">Khôi phục nội dung mặc định</button>
+</aside>
+<main><div class="nav"><button id="prev" class="btn">‹</button><span id="who"></span><button id="next" class="btn">›</button></div>
+<canvas id="cv"></canvas></main>
+<script src="jszip.min.js"></script><script src="assets.js"></script><script src="app.js"></script>
+</body></html>
